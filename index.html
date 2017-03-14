@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Clients</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="container">  
+      <header>
+        <h2>CLIENTS</h2>
+      </header>
+      <div class="center">
+        <button id="btn-client">Get Info of all clients</button>
+      </div>
+      <div id="clients-container"></div>
+    </div>
+    
+    <script id="clientsTemplate" type="text/x-handlebars-template">
+      {{#each clients}}
+      <div class="client">
+        <div class="img">
+          <img src="{{image}}" />
+        </div>
+        <div class="info-client">
+          <h2>{{name}} {{lastName}}</h2>
+          <div class="address">
+            <p>Company: {{business}}</p>
+            <p>Address: </p>
+            {{#each address}}
+              {{{this}}}
+            {{/each}}
+            <p id="year">Years of Fidelty: {{calculateYears clientFidelty}}</p>
+          </div>
+        </div>
+      </div>
+        
+        
+      {{/each}}
+    </script>
+    
+    <script src="js/handlebars.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
